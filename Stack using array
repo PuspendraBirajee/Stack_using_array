@@ -1,0 +1,86 @@
+//implementation of stack using array
+#include<stdio.h>
+int n,top=-1,stack[100];
+void push()
+{
+	int val;
+	scanf("%d",&val);
+	if(top==n-1)
+	{
+	  printf("Overflow\n");
+	}
+	else 
+	{
+		top++;
+	  stack[top]=val;	
+	}
+}
+void pop()
+{
+	if(top==-1)
+	{
+		printf("Stack is empty\n");
+	}
+	else
+	 {
+		printf("%d\n",stack[top]);
+		top--;
+	}
+}
+void peek()
+{
+	if(top==-1)
+	{
+		printf("Stack is empty\n");
+	}
+	else 
+	{
+		printf("%d\n",stack[top]);
+	}
+}
+void display()
+{
+	if(top==-1)
+	{
+		printf("No Node\n");
+	}
+	else
+	{
+	for(int i=top; i>=0; i--)
+	{
+		printf("%d ",stack[i]);
+	}
+	printf("\n");
+  	}
+}
+int main()
+{
+	scanf("%d",&n);
+	while(1)
+	{
+		int ch;
+		printf("1.push 2.pop 3.peek 4.display 5.exist ");
+		scanf("%d",&ch);
+		if(ch==1)
+		{
+			// push
+			push();
+		}
+		else if(ch==2)
+		{
+		   	pop();
+		}
+		else if(ch==3)
+		{
+			peek();
+		}
+		else if(ch==4)
+		{
+		   display();	
+		}
+		else
+		{
+			break;
+		}
+	}
+}
